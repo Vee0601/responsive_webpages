@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+
+<body style="background-image: url(images/TA.jpg); background-size: fixed;">
+
+  <main class="container">
+
+        <h1 style= "color: yellow" >materialize</h1>
+
+        <div class="row">
+
+            <div class="col s6 center">
+                <h1 style= "color: yellow">{{data.user.fullName}}</h1>
+            </div>
+
+            <div class="col s8 center">
+                <figure>
+                    <img class="col s6 center" src="{{data.user.photo}}" alt="My picture"/>
+                </figure>
+            </div>
+        
+        </div>
+      <hr />
+
+
+        <div class="row">
+          <h1 style= "color: yellow" >Favourite City</h1>
+          <h2 class="center">{{data.city.name}}</h2>
+            <div class="col s4">
+              <img class="col s11 rounded" id="petermazitzberg" src="{{data.city.photo}}" alt="petermazitzberg city"/>
+          
+            </div>
+            <div class="col s4">
+                <p style= "color: white">
+                    {{data.city.description}}
+                </p>
+            </div>
+        </div>
+
+
+
+        <h1 style= "color: yellow">Foreign language</h1>
+        
+        <h2>{{foreignLanguage.language}}</h2>
+
+        <table class="table table-danger">
+            <thead>
+              <tr>
+                <th scope="col">English Phrase</th>
+                <th scope="col">Foreign Phrase</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            {{#each data.foreignLanguage.phrases}}
+              <tr>
+                <td>{{englishPhrase}}</td>
+                <td>{{foreignLanguage}}</td>
+              </tr>
+              {{/each}}
+
+            </tbody>
+        </table>
+
+        <h1 style= "color: yellow">favourite Subjects</h1>
+
+            {{#each data.favouriteSubjects}}
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="col s8">
+              <div class="card-body">
+                  <h5 class="card-title">{{name}}</h5>
+                <p class="card-text">{{description}}</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+        </div>
+           {{/each}}    
+   
+  </main>
+
+</body>
+</html>
